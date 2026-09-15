@@ -47,6 +47,11 @@ Detta är ett fristående projekt utan koppling till andra repositories.
 - La till serveringstips med två bilder.
 - La till README med projektinformation och körinstruktioner.
 
+### Kommande förbättringar
+- Gör sidan mer modern och stilren med ett mer professionellt färgschema.
+- Lägg till fler receptdetaljer, till exempel tidsåtgång, portioner och allergeninformation.
+- Förbättra responsiviteten och användarupplevelsen för mobil och tablet.
+
 ## Licens
 
 Detta projekt saknar ännu explicit licens. Lägg till en licens om du planerar att dela projektet offentligt.
