@@ -39,6 +39,13 @@ Detta är ett fristående projekt utan koppling till andra repositories.
 
 ## Versionsförändringar
 
+### v1.1.0 - 2026-09-15
+- Moderniserad design för att göra sidan mer stilren och professionell.
+- Förbättrade färger, typografi, kortlayout och spacing.
+- Förbättrad responsivitet för mobil och större skärmar.
+- Uppdaterade bilder och text i serveringstips för ett mer enhetligt uttryck.
+- README uppdaterad med den nya versionen och den genomförda förbättringen.
+
 ### v1.0.0 - 2026-09-15
 - Skapad grundläggande HTML-sida för pannkakarecept.
 - Lade till headerbild med hero-sektion.
@@ -48,9 +55,9 @@ Detta är ett fristående projekt utan koppling till andra repositories.
 - La till README med projektinformation och körinstruktioner.
 
 ### Kommande förbättringar
-- Gör sidan mer modern och stilren med ett mer professionellt färgschema.
 - Lägg till fler receptdetaljer, till exempel tidsåtgång, portioner och allergeninformation.
 - Förbättra responsiviteten och användarupplevelsen för mobil och tablet.
+- Utforska fler designförbättringar om projektet utvidgas.
 
 ## Licens
 

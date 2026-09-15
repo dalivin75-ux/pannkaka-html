@@ -6,24 +6,33 @@
     <title>Pannkaka recept</title>
     <style>
       :root {
-        --bg: #fffaf3;
-        --card: #fff;
+        --bg: #f7efe5;
+        --bg-strong: #f1e0c7;
+        --card: rgba(255, 255, 255, 0.88);
+        --card-solid: #fffdf9;
         --accent: #d97706;
-        --accent-dark: #b45309;
-        --text: #2d2a26;
-        --muted: #6b7280;
-        --line: #f0d9b5;
-        --shadow: 0 12px 30px rgba(90, 52, 18, 0.12);
+        --accent-strong: #b55408;
+        --accent-soft: #fff1db;
+        --text: #2e2418;
+        --muted: #675b50;
+        --line: #ead8b9;
+        --shadow: 0 18px 40px rgba(80, 46, 2, 0.12);
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: var(--bg);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.7), transparent 35%),
+          linear-gradient(180deg, var(--bg) 0%, #fffaf4 100%);
         color: var(--text);
         line-height: 1.6;
       }
@@ -34,73 +43,85 @@
       }
 
       .container {
-        width: min(1100px, calc(100% - 32px));
+        width: min(1120px, calc(100% - 32px));
         margin: 0 auto;
       }
 
       .hero {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.18)),
+        position: relative;
+        background-image: linear-gradient(rgba(34, 22, 9, 0.28), rgba(34, 22, 9, 0.18)),
           url('https://plus.unsplash.com/premium_photo-1707757442378-8cb5223916ae?auto=format&fit=crop&w=1600&q=80');
         background-size: cover;
         background-position: center;
-        min-height: 420px;
+        min-height: 440px;
         display: flex;
-        align-items: end;
+        align-items: flex-end;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.32));
       }
 
       .hero-inner {
-        padding: 40px 0 52px;
+        position: relative;
+        z-index: 1;
+        padding: 52px 0 60px;
       }
 
       .hero-badge {
         display: inline-block;
-        background: rgba(255, 255, 255, 0.82);
-        color: var(--accent-dark);
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--accent-strong);
         font-weight: 700;
         padding: 8px 14px;
         border-radius: 999px;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        font-size: 0.76rem;
+        font-size: 0.74rem;
       }
 
       h1 {
-        margin: 16px 0 10px;
-        font-size: clamp(2.5rem, 4vw, 4.2rem);
-        color: white;
-        line-height: 1.1;
+        margin: 18px 0 10px;
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
+        color: #fffaf6;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
       }
 
       .subtitle {
         margin: 0;
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 1.1rem;
-        max-width: 620px;
+        color: rgba(255, 250, 245, 0.92);
+        font-size: 1.08rem;
+        max-width: 700px;
       }
 
       main {
-        padding: 36px 0 56px;
+        padding: 40px 0 60px;
       }
 
       .grid {
         display: grid;
-        grid-template-columns: 1.1fr 1.4fr;
+        grid-template-columns: 1.05fr 1.45fr;
         gap: 28px;
       }
 
       .panel {
         background: var(--card);
-        border: 1px solid var(--line);
-        border-radius: 20px;
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(234, 216, 185, 0.9);
+        border-radius: 24px;
         box-shadow: var(--shadow);
-        padding: 28px;
+        padding: 30px;
       }
 
       h2 {
-        margin-top: 0;
-        margin-bottom: 18px;
-        font-size: clamp(1.6rem, 2vw, 2.2rem);
-        color: var(--accent-dark);
+        margin: 0 0 18px;
+        font-size: clamp(1.7rem, 2.3vw, 2.4rem);
+        color: var(--accent-strong);
+        letter-spacing: -0.03em;
       }
 
       .ingredients {
@@ -108,24 +129,31 @@
         padding: 0;
         margin: 0;
         display: grid;
-        gap: 12px;
+        gap: 14px;
       }
 
       .ingredients li {
         display: flex;
         align-items: center;
         gap: 12px;
-        background: #fff9f1;
-        border: 1px solid #f6e1bc;
-        border-radius: 12px;
+        background: linear-gradient(180deg, #fff9f0 0%, #fff4e7 100%);
+        border: 1px solid var(--line);
+        border-radius: 14px;
         padding: 12px 14px;
+        font-size: 1.02rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .ingredients li:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(143, 91, 21, 0.08);
       }
 
       .ingredient-dot {
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        background: var(--accent);
+        background: linear-gradient(135deg, var(--accent), #f6b14c);
         display: inline-block;
         flex-shrink: 0;
       }
@@ -141,10 +169,10 @@
       .steps li {
         display: grid;
         grid-template-columns: 42px 1fr;
-        gap: 14px;
+        gap: 16px;
         align-items: start;
-        padding-bottom: 18px;
-        border-bottom: 1px solid #f2e2c9;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(234, 216, 185, 0.9);
       }
 
       .steps li:last-child {
@@ -156,39 +184,46 @@
         width: 42px;
         height: 42px;
         border-radius: 50%;
-        background: var(--accent);
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
         color: white;
         display: grid;
         place-items: center;
-        font-weight: 700;
+        font-weight: 800;
+        box-shadow: 0 8px 20px rgba(184, 95, 11, 0.25);
       }
 
       .tips {
-        margin-top: 28px;
+        margin-top: 30px;
       }
 
       .tips-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
+        gap: 22px;
       }
 
       .tip-card {
         overflow: hidden;
-        border-radius: 16px;
-        background: white;
+        border-radius: 18px;
+        background: var(--card-solid);
         border: 1px solid var(--line);
-        box-shadow: var(--shadow);
+        box-shadow: 0 12px 30px rgba(95, 62, 28, 0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .tip-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(95, 62, 28, 0.12);
       }
 
       .tip-card img {
         width: 100%;
-        height: 240px;
+        height: 250px;
         object-fit: cover;
       }
 
       .tip-card p {
-        padding: 14px 16px 18px;
+        padding: 16px 18px 20px;
         margin: 0;
         font-weight: 600;
         color: var(--text);
@@ -201,7 +236,7 @@
         }
 
         .hero {
-          min-height: 320px;
+          min-height: 340px;
         }
 
         .panel {
@@ -266,12 +301,12 @@
         <div class="tips-grid">
           <article class="tip-card">
             <img src="https://plus.unsplash.com/premium_photo-1707757442384-df157463bf15?auto=format&fit=crop&w=1000&q=80" alt="Pannkaka med sylt och grädde" />
-            <p>Servera med massor av säsongens färska bär och mjukt vispad grädde.</p>
+            <p>Servera med lingonsylt, ett litet klick grädde och lite färska bär för en klassisk smak.</p>
           </article>
 
           <article class="tip-card">
             <img src="https://images.unsplash.com/photo-1597699401474-e8714c1b7879?auto=format&fit=crop&w=1000&q=80" alt="Pannkaka med bär och frukt" />
-            <p>Exklusivt!! Banan, jordgubbar och chokladkräm. En förförare i sommarskrud!</p>
+            <p>Toppa med jordgubbar, banan och lite honung för en lätt och sötare variant.</p>
           </article>
         </div>
       </section>
