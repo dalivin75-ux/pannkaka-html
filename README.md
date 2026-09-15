@@ -37,6 +37,16 @@ http://localhost:8000
 
 Detta är ett fristående projekt utan koppling till andra repositories.
 
+## Versionsförändringar
+
+### v1.0.0 - 2026-09-15
+- Skapad grundläggande HTML-sida för pannkakarecept.
+- Lade till headerbild med hero-sektion.
+- La till sektion för ingredienser med 5 ingredienser.
+- La till steg-för-steg instruktioner för tillagning.
+- La till serveringstips med två bilder.
+- La till README med projektinformation och körinstruktioner.
+
 ## Licens
 
 Detta projekt saknar ännu explicit licens. Lägg till en licens om du planerar att dela projektet offentligt.
