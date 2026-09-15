@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pannkaka recept</title>
+    <style>
+      :root {
+        --bg: #fffaf3;
+        --card: #fff;
+        --accent: #d97706;
+        --accent-dark: #b45309;
+        --text: #2d2a26;
+        --muted: #6b7280;
+        --line: #f0d9b5;
+        --shadow: 0 12px 30px rgba(90, 52, 18, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.18)),
+          url('https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        min-height: 420px;
+        display: flex;
+        align-items: end;
+      }
+
+      .hero-inner {
+        padding: 40px 0 52px;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.82);
+        color: var(--accent-dark);
+        font-weight: 700;
+        padding: 8px 14px;
+        border-radius: 999px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.76rem;
+      }
+
+      h1 {
+        margin: 16px 0 10px;
+        font-size: clamp(2.5rem, 4vw, 4.2rem);
+        color: white;
+        line-height: 1.1;
+      }
+
+      .subtitle {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.1rem;
+        max-width: 620px;
+      }
+
+      main {
+        padding: 36px 0 56px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1.4fr;
+        gap: 28px;
+      }
+
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        padding: 28px;
+      }
+
+      h2 {
+        margin-top: 0;
+        margin-bottom: 18px;
+        font-size: clamp(1.6rem, 2vw, 2.2rem);
+        color: var(--accent-dark);
+      }
+
+      .ingredients {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .ingredients li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff9f1;
+        border: 1px solid #f6e1bc;
+        border-radius: 12px;
+        padding: 12px 14px;
+      }
+
+      .ingredient-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--accent);
+        display: inline-block;
+        flex-shrink: 0;
+      }
+
+      .steps {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 18px;
+      }
+
+      .steps li {
+        display: grid;
+        grid-template-columns: 42px 1fr;
+        gap: 14px;
+        align-items: start;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #f2e2c9;
+      }
+
+      .steps li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .step-number {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--accent);
+        color: white;
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+      }
+
+      .tips {
+        margin-top: 28px;
+      }
+
+      .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .tip-card {
+        overflow: hidden;
+        border-radius: 16px;
+        background: white;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .tip-card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+      }
+
+      .tip-card p {
+        padding: 14px 16px 18px;
+        margin: 0;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      @media (max-width: 760px) {
+        .grid,
+        .tips-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: 320px;
+        }
+
+        .panel {
+          padding: 22px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container hero-inner">
+        <span class="hero-badge">Hemmagjort</span>
+        <h1>Gullig och luftig pannkaka</h1>
+        <p class="subtitle">
+          En klassisk svensk pannkaka som är mjuk i mitten, gyllenbrun på utsidan och perfekt att servera med sylt, grädde eller frukt.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="grid">
+        <section class="panel">
+          <h2>Ingredienser</h2>
+          <ul class="ingredients">
+            <li><span class="ingredient-dot"></span> 3 ägg</li>
+            <li><span class="ingredient-dot"></span> 3 dl mjölk</li>
+            <li><span class="ingredient-dot"></span> 1,5 dl vetemjöl</li>
+            <li><span class="ingredient-dot"></span> 2 msk smör</li>
+            <li><span class="ingredient-dot"></span> 1/2 tsk salt</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h2>Gör så här</h2>
+          <ol class="steps">
+            <li>
+              <span class="step-number">1</span>
+              <div>Vispa äggen lätt i en bunke. Tillsätt mjölk, mjöl och salt och rör till en jämn smet.</div>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <div>Smält smöret i en panna och häll i lite av smeten så att den blir jämnt fördelad.</div>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <div>Stek pannkakan på medelvärme tills den blir fast och lite gyllenbrun, ca 2–3 minuter per sida.</div>
+            </li>
+            <li>
+              <span class="step-number">4</span>
+              <div>Fortsätt med resten av smeten tills du har en fin, stor pannkaka eller flera mindre pannkakor.</div>
+            </li>
+            <li>
+              <span class="step-number">5</span>
+              <div>Servera varm med sylt, grädde, lingonsylt, frukt eller en klick smör.</div>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+      <section class="tips panel">
+        <h2>Serveringstips</h2>
+        <div class="tips-grid">
+          <article class="tip-card">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428e0291777?auto=format&fit=crop&w=1000&q=80" alt="Pannkaka med sylt och grädde" />
+            <p>Servera med lingonsylt och en skopa grädde för den klassiska smaken.</p>
+          </article>
+
+          <article class="tip-card">
+            <img src="https://images.unsplash.com/photo-1513442542250-854d436a73f2?auto=format&fit=crop&w=1000&q=80" alt="Pannkaka med bär och frukt" />
+            <p>Toppa med färska bär, honung och lite citronskal för en lätt och fräsch variant.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
